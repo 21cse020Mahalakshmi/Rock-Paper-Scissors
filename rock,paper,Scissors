@@ -1,0 +1,29 @@
+import random
+def get_choices():
+  player_choice=input("Enter your Choices(Rock,Paper,Scissors):")
+  options=["Rock","Paper","Scissors"]
+  computer_choice=random.choice(options)
+  choices={"player":player_choice,"computer":computer_choice}
+  return choices
+
+def winner(player,comp):
+  if(player==comp):
+    print("Oh!It's a tie")
+  elif(player=="Rock" and comp=="Scissors"):
+    print("Rock breaks the Scissors,You Win")
+  elif(player=="Rock" and comp=="Paper"):
+    print("Paper wraps the rock!")
+  elif(player=="Scissors" and comp=="Paper"):
+    print("Scissors cut the paper,You win!!")
+  elif(player=="Scissors" and comp=="Rock"):
+    print("Rock breaks the Scissors,You lose")
+  elif(player=="Paper" and player=="Rock"):
+    print("Paper wraps the rock,You win!!")
+  elif(player=="Paper" and player=="Scissors"):
+    print("Scissors cut the paper,You losseee!!")
+  else:
+    print("Enter valid statement")
+    
+final_choice=get_choices()
+res=winner(final_choice["player"],final_choice["computer"])
+
